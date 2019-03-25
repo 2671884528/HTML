@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onclick和click的区别</title>
+    <style>
+        h1{
+            color: chartreuse;
+
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+<h1>
+    click是对象的方法，onclick是事件，当我们点击按钮是，
+    首先触发的是事件，然后是方法
+</h1>
+
+<input type="button" value="你也是一个人才啊大哥" onclick="Onclick()">
+<script type="text/javascript">
+    
+    $('input').click(function () {
+        alert("执行click方法")
+    })
+</script>
+<SCRIPT type="text/javascript">
+    function Onclick() {
+        document.getElementsByTagName('input')[0].style.color = 'red';
+        alert("执行onclick事件监听")
+    }
+</SCRIPT>
+</body>
+</html>

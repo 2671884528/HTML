@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象转换</title>
+    <!--https://code.jquery.com/jquery-3.3.1.min.js-->
+    <SCRIPT type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></SCRIPT>
+
+</head>
+<body>
+<div>元素一</div>
+<div>元素二</div>
+<div>元素三</div>
+<div>元素四</div>
+<div>元素五</div>
+<div>元素六</div>
+<!-- 第一种方法-->
+<SCRIPT type="text/javascript">
+    $('div')[0].innerHTML = '你是猪？';
+    $('div')[0].style.color = '#550000';
+    $('div')[1].innerHTML = '你是鱼？';
+    $('div')[1].style.color = '#5500ff';
+    $('div')[2].innerHTML = '你是屎？';
+    $('div')[2].style.color = '#55ff10';
+</SCRIPT>
+<!--第二种方法通过jquery内置的get()方法获得dom对象-->
+<script>
+    $('div').get(3).innerHTML = '我还是爱你';
+    $('div').get(3).style.color = '#aa0000';
+    $('div').get(4).innerHTML = '我还是想你';
+    $('div').get(4).style.color = '#00ff00';
+    $('div').get(5).innerHTML = '我还是爱你';
+    $('div').get(5).style.color = '#aa00ff';
+</script>
+</body>
+</html>

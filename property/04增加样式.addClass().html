@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+    <STYLE>
+        .left,.right{
+            margin: auto;
+            height: 100px;
+            width: 200px;
+        }
+        .left div,.right div
+        {
+            margin: auto;
+            text-align: center;
+            color: tan;
+        }
+        .newClassOne{
+            background: darkred;
+        }
+        .newClassTwo{
+            background: deeppink;
+        }
+
+    </STYLE>
+</head>
+<body>
+<div class="left">
+    <div>what fuck!!!</div>
+    <div>how long?</div>
+</div>
+<div class="right">
+    <div>you can?</div>
+    <div>nice gg.</div>
+</div>
+<SCRIPT type="text/javascript">
+    $('.left div').addClass('newClassOne');
+    $('.right div').addClass('newClassTwo');
+</SCRIPT>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id='dom'>你是猪吗？</div>
+<div class="dom">你是傻子？</div>
+<script type="text/javascript" src="jquery-3.3.1.js">
+</script>
+<script>
+    console.log(document.getElementById('dom').innerText);
+    console.log(jQuery('#dom').text());
+    console.log(jQuery('.dom').text());
+    console.log($({0: 'a', 1: 'b', length: 2}));
+    console.log($(add()))
+    function add() {
+        var a = 10, b = 20;
+        c = a + b;
+        return c;
+    }
+    document.write(add())
+</script>
+</body>
+</html>

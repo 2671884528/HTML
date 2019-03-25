@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选择器</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+</head>
+<body>
+<div>this表示的是哪个对象调用就是哪个</div>
+<div>向上转型会丢失自己拥有的方法（父类没有的方法）</div>
+<p>我他妈的！！！</p>
+<p>你是不是猪？？</p>
+<SCRIPT type="text/javascript">
+    // document.getElementsByTagName('*')[8].innerHTML = '你是小可爱';
+</SCRIPT>
+<SCRIPT type="text/javascript">
+    console.log($('*'));
+</SCRIPT>
+</body>
+</html>

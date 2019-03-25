@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方法二：使用table-cell形式</title>
+    <STYLE>
+        .par {
+            width: 600px;
+            height: 400px;
+            background: cyan;
+            /*此元素会作为内联表格来显示（类似 <table>），表格前后没有换行符。*/
+            display: table-cell;
+            /*该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐*/
+            /*允许指定负长度值和百分比值。这会使元素降低而不是升高。在表单元格中，*/
+            /*这个属性会设置单元格框中的单元格内容的对齐方式。*/
+            /*控制左右居中*/
+            vertical-align: middle;
+            /*控制上下居中*/
+            text-align: center;
+        }
+
+        .son {
+            width: 400px;
+            height: 200px;
+            display: inline-block;
+            background: deeppink;
+        }
+    </STYLE>
+</head>
+<body>
+<div class="par">
+    <div class="son"></div>
+</div>
+</body>
+</html>

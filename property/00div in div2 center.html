@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>.方法三（使用弹性布局fle)</title>
+    <STYLE>
+        .par {
+            width: 600px;
+            height: 400px;
+            background: cyan;
+            /*flex 属性用于设置或检索弹性盒模型对象的子元素如何分配空间。*/
+            /*flex 属性是 flex-grow、flex-shrink 和 flex-basis 属性的简写属性。*/
+            /*注意：如果元素不是弹性盒模型对象的子元素，则 flex 属性不起作用。*/
+            display: flex;
+            /*水平居中*/
+            justify-content:center;
+            /*垂直居中*/
+            align-items: center;
+        }
+        .son {
+            width: 400px;
+            height: 200px;
+            background: deeppink;
+        }
+    </STYLE>
+</head>
+<body>
+<div class="par">
+    <div class="son"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>id选择器</title>
+    <style>
+        div{
+           margin: 0px;
+            background: cyan;
+            text-align: center;
+        }
+        body{
+            margin: 0px;
+        }
+    </style>
+    <script type="text/javascript" src ="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div id="dom">
+
+    <p>getElementByTagName()</p>
+    <p>获得的是一个集合</p>
+</div>
+<div id="jq">
+    <p>Integer.parseInt(String s).valueOf()</p>
+    <p>将s转化成数字</p>
+</div>
+
+<script type="text/javascript">
+    document.getElementById('dom').style.border = "3px solid green";
+</script>
+<script type="text/javascript">
+    $('#jq').css("border","3px solid yellow");
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="dom">我是一个小猪</div>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script>
+    // (function () {
+    //     window.jQuery = window.$ = jQuery;
+    //
+    //     function jQuery(id) {
+    //         return new init();
+    //     }
+    //     function init() {
+    //
+    //         var dom = document.getElementById('dom'.slice(1));
+    //         this[0] = dom;
+    //         length = 1;
+    //         return this;
+    //     }
+    // })();
+
+    console.log(jQuery('.dom').text())
+</script>
+</body>
+</html>

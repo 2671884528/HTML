@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层级选择器</title>
+    <STYLE>
+        *{
+            text-align: center;
+        }
+
+    </STYLE>
+    <SCRIPT type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></SCRIPT>
+</head>
+<body>
+<h1>子选择器或者后代选择器</h1>
+<div>
+    <p>你是一个大猪头</p>
+</div>
+<div>
+    <p>你不是一个人</p>
+</div>
+<div>
+    <article>
+        <p>你最近好吗</p>
+    </article>
+</div>
+<SCRIPT type="text/javascript">
+    //'div p'层级选择器代表的是div下面的p标签包括子代的和孙子代的.....(及所有的p标签)
+    $('div p').css('border', '5px groove pink')
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+    // 这个 div > p 选择器代表着div下面直属的p标签
+    $('div > p').css('border', '5px groove cyan')
+</SCRIPT>
+<h1>相邻兄弟与一般兄弟选择器</h1>
+<div class="div">
+    <div class="one">第一个div(span)</div>
+    <span class="two">第一个(div)span(div)</span>
+    <div class="three">第二个(span)div(span)</div>
+    <span class="four">第二个(div)span</span>
+    <div>第三个div</div>
+    <span>第三个span</span>
+</div>
+
+<SCRIPT type="text/javascript">
+
+    // 不能向前只能向后,只能是相邻的一个是标签的名字,不能进行跳跃
+    $('.one + div').css('border','5px groove purple');
+    $('.one + span').css('border' ,'5px groove pink');
+    //~'.one ~ div'表示从这个标签之后的所有的div标签（不包含自己）
+    $('.one ~ div').css('border','5px groove yellow')
+
+</SCRIPT>
+</body>
+</html>

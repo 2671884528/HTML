@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+    <STYLE>
+        body{
+            width: 100%;
+            height: 100%;
+            background: #bbffaa;
+        }
+        select{
+            margin: auto;
+            font-size: 30px;
+            color: darkred;
+            display: block;
+        }
+    </STYLE>
+</head>
+<body>
+<h1>你的地址</h1>
+<select id="one" multiple="multiple">
+    <option>江西省</option>
+    <option>湖南省</option>
+    <option selected="selected">四川省</option>
+    <option >浙江省</option>
+    <option>广东省</option>
+</select>
+<select id="two" multiple="multiple">
+    <option selected="selected">居民身份证</option>
+    <option>军人证</option>
+    <option>残疾证</option>
+    <option selected="selected">港澳台证</option>
+    <option>共产党</option>
+</select>
+<input type="text" value="click a button" />
+<p></p>
+
+<script type="text/javascript">
+    //单个select，返回第一个
+    $("p").text( $("#one").val())
+</script>
+
+<script type="text/javascript">
+    //多个select被选择，返回["imocc", "博客园"]
+    $("p").text( $("#two").val())
+</script>
+
+
+<script type="text/javascript">
+    //选择一个表单，修改value的值
+    $("input[type='text']").val('修改表单的字段')
+</script>
+
+</body>
+</html>

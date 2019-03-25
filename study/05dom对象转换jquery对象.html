@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div>元素一</div>
+<div>元素二</div>
+<div>元素三</div>
+调用jquery中的first()和next()和last()的方法逐个的找到标签
+<SCRIPT type="text/javascript">
+    $(document.getElementsByTagName('div')).first().css('color','#aa00dd');
+    $(document.getElementsByTagName('div')).next().css('color','#00ff00');
+    $(document.getElementsByTagName('div')).last().css('color','#0000dd');
+</SCRIPT>
+
+</body>
+</html>

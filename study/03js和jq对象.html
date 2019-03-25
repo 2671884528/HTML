@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="..\jquery-3.3.1.js"></script>
+    <!--第一种方法通过js原生的dom对象-->
+    <script>
+        window.onload =  function () {
+            var dom = document.getElementById('imm1');
+            dom.innerHTML ='请问一下你是猪？';
+            dom.style.color = 'red';
+        }
+
+    </script>
+    <script type="text/javascript">
+        // 通过jq对象
+        $(document).ready(function () {
+            $('#imm2').html('看到我就叫我老公').css('color','yellow');
+        })
+    </script>
+</head>
+<body>
+<p id='imm1'>我他妈的醉了</p>
+<p id='imm2'>我不爱你你是一个人</p>
+</body>
+</html>
