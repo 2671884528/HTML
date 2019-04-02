@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <STYLE>
+        div {
+            text-align: center;
+            margin: 20px auto;
+            border: 20px groove lightpink;
+        }
+        li {
+            list-style-type: none;
+
+        }
+
+    </STYLE>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+</head>
+<body>
+<div>
+    <div>
+        <ul>
+            <button>通过选择器</button>
+            <button>通过Dom</button>
+            <button>通过HTML语句</button>
+        </ul>
+
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    <div>
+        <P>
+            <span>慕课</span>
+            <a href="https://www.imooc.com">慕课</a>
+
+        </P>
+        <span>
+            <span>必应</span>
+            <a href="https://www.cn.bing.com">必应</a>
+        </span>
+    </div>
+</div>
+<SCRIPT type="text/javascript">
+    $('button:first').on('click',function () {
+        $('li').add('span:first').css('border','3px groove red')
+    })
+    $('button').next(':first').on('click',function () {
+        $('li').add(document.getElementsByTagName('a')).css('border','3px solid cyan')
+    })
+    $('button:last').on('click',function () {
+        $('span:first').add('<a href="https://user.qzone.qq.com">空间</a>').appendTo('p')
+    })
+</SCRIPT>
+</body>
+</html>
