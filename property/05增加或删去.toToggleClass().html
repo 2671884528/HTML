@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+    <STYLE>
+        h1 {
+            font-family: Arial;
+            font-size: 40px;
+            color: deeppink;
+            background: cyan;
+        }
+        tr {
+            background: tan;
+        }
+        td {
+            height: 50px;
+            width: 400px;
+        }
+        .add{
+            background: darkred;
+        }
+
+    </STYLE>
+</head>
+<body>
+<h1>toggle Class方法默认的参数是false，没有的话就添加，有的话就删除</h1>
+<table  cellspacing="0" border="10px" style="margin: auto">
+    <tr>
+        <td>你这个猪ok?</td>
+        <td>你这个猪ok?</td>
+    </tr>
+    <tr>
+        <td>你这个猪ok?</td>
+        <td>你这个猪ok?</td>
+    </tr>
+    <tr>
+        <td>你这个猪ok?</td>
+        <td>你这个猪ok?</td>
+    </tr>
+    <tr>
+        <td>你这个猪ok?</td>
+        <td>你这个猪ok?</td>
+    </tr>
+    <tr>
+        <td>你这个猪ok?</td>
+        <td>你这个猪ok?</td>
+    </tr>
+    <tr>
+        <td>你这个猪ok?</td>
+        <td>你这个猪ok?</td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    $('table tr td:even').toggleClass('add');
+    $('table tr:odd td:even').toggleClass('add');
+</script>
+</body>
+
+
+</html>

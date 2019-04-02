@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <STYLE>
+        div {
+            text-align: center;
+            margin: 20px auto;
+            border: 20px groove lightpink;
+        }
+
+        li {
+            list-style-type: none;
+
+        }
+
+    </STYLE>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+</head>
+<body>
+<div>
+    <div>
+        <ul>
+            <button>each循环</button>
+            <button>each回调</button>
+            <li>我有button</li>
+        </ul>
+
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    </div>
+</div>
+<SCRIPT type="text/javascript">
+
+    $('button:first').on('click', function () {
+      $("ul:not(:button) li").each(function (index,element) {
+          $(this).css('border','10px groove cyan')
+      })
+    })
+    $('button:last').on('click', function () {
+        $('ul:last').children().css('border','3px groove red')
+    })
+</SCRIPT>
+</body>
+</html>
