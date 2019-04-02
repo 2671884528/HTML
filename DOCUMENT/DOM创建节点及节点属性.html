@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOCUMENT</title>
+</head>
+<style>
+    .left,.right{
+        width: 300px;
+        height: 150px;
+        /*margin: auto;*/
+        /*是的两个div并列*/
+        display: inline;
+    }
+    .left div,.right div
+    {
+        width: 100px;
+        height: 90px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        border: 10px groove #1effb9;
+    }
+    .left div{
+        background: darkred;
+    }
+    .right div{
+        background: deeppink;
+    }
+</style>
+<body>
+<div class="left">
+    <div class="left-array">
+        点击增加一个div
+    </div>
+</div>
+<SCRIPT type="text/javascript">
+    var body = document.querySelector("body");
+    document.addEventListener('click',function () {
+        var rightDiv = document.createElement('div');
+        var rightArronDiv = document.createElement('div');
+        rightDiv.setAttribute('class','right');
+        rightArronDiv.setAttribute('class','arron');
+        rightArronDiv.innerHTML = '动态的创建节点';
+        rightDiv.appendChild(rightArronDiv);
+        body.appendChild(rightDiv);
+    },false)
+</SCRIPT>
+</body>
+</html>

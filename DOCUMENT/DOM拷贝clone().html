@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <style>
+        .left{
+            width: 100%;
+        }
+
+        .left div{
+            width: 100px;
+            height: 90px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 10px groove darkviolet;
+            background: #bbffaa;
+        }
+    </style>
+</head>
+<body>
+<!--.clone()方法深度 复制所有匹配的元素集合，包括所有匹配元素
+匹配元素的下级元素、文字节点.clone()方法深度 复制所有匹配的元素集合，
+包括所有匹配元素、匹配元素的下级元素、文字节点-->
+<div class="left">
+    <div>clone()方法简单就是克隆节点</div>
+    <div>clone(true)深度克隆节点附带事件的监听</div>
+</div>
+<SCRIPT type="text/javascript">
+    $('div div:first').on('click',function () {
+        $('.left').append($(this).clone().css('background','cyan'))
+    })
+    $('div div:last').on('click',function () {
+        $(this).clone(true).css('background','yellow').appendTo($('.left'))
+    })
+</SCRIPT>
+</body>
+</html>

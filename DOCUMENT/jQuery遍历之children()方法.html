@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <STYLE>
+        div {
+            text-align: center;
+            margin: 20px auto;
+            border: 20px groove lightpink;
+        }
+
+        li {
+            list-style-type: none;
+
+        }
+
+    </STYLE>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+</head>
+<body>
+<div>
+    <div>
+        <ul>
+            <button>children无参</button>
+            <button>children有参</button>
+        </ul>
+
+    </div>
+    <div>p
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+</div>
+<SCRIPT type="text/javascript">
+    // jQuery是一个合集对象，如果想快速查找合集里面的第一级子元素
+    // ，此时可以用children()方法。这里需要注意：.children(selector)
+    // 方法是返回匹配元素集合中每个元素的所有子元素
+    // （仅儿子辈，这里可以理解为就是父亲-儿子的关系）
+    $('button:first').on('click', function () {
+        $('div div:even').children().css('border', '3px groove red');
+    })
+    $('button:last').on('click', function () {
+        $('div div:odd ul').children(':last').css('border', '3px groove red');
+    })
+</SCRIPT>
+</body>
+</html>

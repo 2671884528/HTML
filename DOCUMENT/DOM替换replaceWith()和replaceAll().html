@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <STYLE>
+        div{
+            /*width: 300px;*/
+            margin: 20px auto;
+            border: 10px groove darkviolet;
+            text-align: center;
+        }
+        a{
+            display: block;
+        }
+    </STYLE>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+</head>
+<body>
+<!--.replaceAll()和.replaceWith()功能类似，主要是目标和源的位置区别-->
+<!--.replaceWith()与.replaceAll() 方法会删除与节点相关联的所有数据和事件处理程序-->
+<!--.replaceWith()方法，和大部分其他jQuery方法一样，返回jQuery对象，-->
+<!--所以可以和其他方法链接使用-->
+<!--.replaceWith()方法返回的jQuery对象引用的是替换前的节点，-->
+<!--而不是通过replaceWith/replaceAll方法替换后的节点-->
+<div>
+    <button>replaceWith()</button>
+    <button>replaceAll()</button>
+</div>
+<div>
+    <div>
+        <p>第一个P标签</p>
+        <p>第二个P标签</p>
+        <p>第三个P标签</p>
+    </div>
+    <div>
+        <p>第一个P标签</p>
+        <p>第二个P标签</p>
+        <p>第三个P标签</p>
+    </div>
+</div>
+<SCRIPT type="text/javascript">
+    $('button:first').on('click',function () {
+        $('div div:first p:first').replaceWith('<a href="https://cn.bing.com/">必应</a>')
+    })
+    $('button:last').on('click',function () {
+        $('<a href="https://www.imooc.com">慕课网</a>').replaceAll($('div div:last p:last'));
+    })
+</SCRIPT>
+</body>
+</html>

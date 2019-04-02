@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQUERY</title>
+</head>
+<SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+<style>
+    .left, .right {
+        width: 300px;
+        height: 150px;
+        /*margin: auto;*/
+        /*是的两个div并列*/
+        display: inline;
+    }
+
+    .left div, .right div {
+        width: 100px;
+        height: 90px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        border: 10px groove #1effb9;
+    }
+
+    .left div {
+        background: darkred;
+    }
+
+    .right div {
+        background: deeppink;
+    }
+</style>
+<body>
+<div class="left">
+    <div class="left-array">
+        点击增加一个div
+    </div>
+</div>
+<SCRIPT type="text/javascript">
+    var $body = $('body')
+    document.addEventListener('click', function () {
+        var div = $('<div class="right"><div class="arron">通过jquery新增的一个div</div></div>')
+        $body.append(div);
+    }, false)
+</SCRIPT>
+</body>
+</html>

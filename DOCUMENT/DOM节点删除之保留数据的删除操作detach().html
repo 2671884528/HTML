@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tittle</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <style>
+        div {
+            margin: auto;
+            width: 300px;
+            text-align: center;
+        }
+        div p{
+            display: inline;
+            background: #1effb9;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>第一个</p>
+    <p>第二个</p>
+</div>
+<div class="bt">
+    <button id="bt000">移除一个</button>
+    <button id="bt111">增加一个</button>
+</div>
+<SCRIPT type="text/javascript">
+    $('p').on('click',function () {
+        alert("给p加一个事件的监听");
+    })
+</SCRIPT>
+<SCRIPT type="text/javascript">
+    var div;
+    $('#bt000').on('click',function () {
+        div = $('div:not(.bt)').detach();
+    })
+    $('#bt111').on('click',function () {
+        $('button:first').before(div);
+    })
+</SCRIPT>
+</body>
+</html>

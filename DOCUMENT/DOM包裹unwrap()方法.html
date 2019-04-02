@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></SCRIPT>
+    <style>
+        div {
+            margin: 20px auto;
+            background: darkviolet;
+            width: 100%;
+            border: 10px groove cyan;
+            text-align: center;
+        }
+
+        a,p{
+            display: block;
+            text-decoration: none;
+            border: 2px groove red;
+        }
+
+    </style>
+</head>
+<body>
+<h2>我要删除这段代码中的div，一般常规的方法会直接通过remove或者empty方法
+
+    但是如果我还要保留内部元素p，这样就意味着需要多做很多处理，步骤相对要麻烦很多，为了更便捷，jQuery提供了unwrap方法很方便的处理了这个问题
+
+    找到p元素，然后调用unwrap方法，这样只会删除父辈div元素了
+
+    这个方法比较简单，也不接受任何参数，注意参考下案例的使用即可</h2>
+<div>
+    <button>给p删除父标签</button>
+    <button>给a删除父标签</button>
+</div>
+<div>
+    <p>第一个p元素</p>
+    <p>第二个p元素</p>
+</div>
+<div>
+    <a href="#">第一个a元素</a>
+    <a href="#">第二个a元素</a>
+</div>
+<SCRIPT type="text/javascript">
+    $('button:first').on('click',function () {
+        $('p').unwrap('<div></div>');
+    })
+    $('button:eq(1)').on('click',function () {
+        $('a').unwrap(function () {
+            return '<div></div>'
+        })
+    })
+</SCRIPT>
+</body>
+</html>

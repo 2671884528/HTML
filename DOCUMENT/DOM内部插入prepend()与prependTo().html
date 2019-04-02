@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+<style>
+    div {
+        margin: auto;
+        text-align: center;
+        width: 300px;
+        text-align: center;
+        border: 10px groove lightgreen;
+    }
+
+</style>
+<body>
+<div>
+    <button id="bt01">按钮一增加一个通过prepend</button>
+    <button id="bt02">按钮一增加一个通过prependTo</button>
+</div>
+<div class="content000">
+    <p>测试prepend</p>
+</div>
+<div class="content111">
+    <p>测试prependTo</p>
+</div>
+<SCRIPT type="text/javascript">
+    $('#bt01').on('click', function () {
+        $('.content000').prepend('<p style="background: chartreuse" class="append">通过prepend增加的一个div</p>');
+    })
+    $('#bt02').on('click', function () {
+        $('<p class="appendTo" style="background: lightpink">通过prependTo增加的一个div</p>').prependTo($('.content111'));
+
+    })
+</SCRIPT>
+</body>
+</html>

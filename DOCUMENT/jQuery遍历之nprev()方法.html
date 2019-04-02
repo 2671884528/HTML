@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <STYLE>
+        div {
+            text-align: center;
+            margin: 20px auto;
+            border: 20px groove lightpink;
+        }
+        li {
+            list-style-type: none;
+
+        }
+
+    </STYLE>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+</head>
+<body>
+<div>
+    <div>
+        <ul>
+            <button>pre()无参</button>
+            <button>pre()有参</button>
+        </ul>
+
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    <div>
+        <P>
+            <span>慕课</span>
+            <a href="https://www.imooc.com">慕课</a>
+
+        </P>
+        <span>
+            <span>必应</span>
+            <a href="https://www.cn.bing.com">必应</a>
+        </span>
+    </div>
+</div>
+<SCRIPT type="text/javascript">
+$('button:first').on('click',function () {
+    $('li').prev().css('border','3px groove cyan')
+})
+$('button:last').on('click',function () {
+    $('span').prev().css('border','3px groove cyan')
+})
+</SCRIPT>
+</body>
+</html>

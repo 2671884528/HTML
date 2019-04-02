@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>empty</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <style>
+        div{
+            width: 300px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>测试移除00000</p>
+    <p>测试移除11111</p>
+</div>
+<div title="button">
+    <button id="bt000">移除一个dom</button>
+</div>
+<script>
+    $('div:not(title) > p:first').css('background','cyan')
+    $('div:not(title) > p:odd').css('background','red')
+</script>
+
+<script type="text/javascript">
+    $('#bt000').on('click',function () {
+        // 虽然被移除了他的dom对象不显示了但是还是存在的
+        // 如果我们通过empty方法移除里面div的所有元素，
+        // 它只是清空内部的html代码，但是标记仍然留在DOM中
+        $('p:first').empty();
+        console.log($('p:first'))
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--remove与empty一样，都是移除元素的方法，但是remove会将元素自身移除，
+同时也会移除元素内部的一切，包括绑定的事件及与该元素相关的jQuery数据。-->
+<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+<style>
+    div{
+        margin: 0 auto 20px;
+        width: 300px;
+        border: 10px groove darkviolet;
+        text-align: center;
+    }
+
+</style>
+<body>
+<div>
+    <p>你是猪吗1p1</p>
+
+    <p>你是猪吗1p2</p>
+</div>
+<div title="aaa">
+    <button id="bt000">按钮000</button>
+</div>
+<div title="aaa">
+    <p>你是猪吗2p1</p>
+
+    <p>你是猪吗2p2</p>
+</div>
+<div title="aaa">
+    <button id="bt111">按钮111</button>
+</div>
+<script type="text/javascript">
+    $('p:odd').css('background','cyan');
+    $('p:even').css('background','red');
+
+</script>
+<script type="text/javascript">
+    var div;
+    $('#bt000').on('click',function () {
+        //删除这个节点的时候同时删除了通过remove方法移除div及其内部所有元素，
+        // remove内部会自动操作事件销毁方法，所以使用使用起来非常简单
+        div = $('div:first').remove();
+    })
+    $('#bt111').on('click', function () {
+        // $('div:eq(2) p').filter(":contains('1')").remove()
+        // $('div:not(title) p:first').remove()
+        $('div:first').before(div);
+    });
+    //检测通过remove删掉的元素同时他的事件的监听也被删除
+    // $('p').on('click',function () {
+    //     alert('ni是不是傻')
+    // })
+</script>
+</body>
+</html>

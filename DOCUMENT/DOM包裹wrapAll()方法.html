@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+    <style>
+        div {
+            margin: 20px auto;
+            background: darkviolet;
+            width: 100%;
+            border: 10px groove cyan;
+            text-align: center;
+        }
+
+        a, p {
+            display: block;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+<h2>wrap是针对单个dom元素处理，如果要将集合中的元素用其他元素包裹起来
+    也就是给他们增加一个父元素，针对这样的处理，JQuery提供了一个wrapAll方法</h2>
+<div>
+    <button>给p删除父标签</button>
+    <button>给a删除父标签</button>
+</div>
+
+<p>第一个p元素</p>
+<p>第二个p元素</p>
+<a href="#">第一个a元素</a>
+<a href="#">第二个a元素</a>
+<p>第三个p元素</p>
+<script type="text/javascript">
+    $('button:even').on('click', function () {
+        //给p的整体加一个div
+        $('p').wrapAll('<div></div>')
+    })
+    $('button:odd').on('click', function () {
+        //给每一个a加一个div
+        $('a').wrapAll(function () {
+            return '<div></div>'
+        })
+    })
+</script>
+</body>
+</html>

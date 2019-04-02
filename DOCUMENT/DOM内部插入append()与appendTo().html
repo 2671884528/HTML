@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+<style>
+    div {
+        margin: auto;
+        text-align: center;
+    }
+
+    .content {
+        width: 300px;
+        text-align: center;
+        background: darkviolet;
+    }
+
+    .append {
+        background: aqua;
+    }
+
+    .appendTo {
+        background: chartreuse;
+    }
+</style>
+
+<!--append：这个操作与对指定的元素执行原生的appendChild方法，
+将它们添加到文档中的情况类似。-->
+
+<!--appendTo：实际上，使用这个方法是颠倒了常规的$(A).append(B)的操作，
+即不是把B追加到A中，而是把A追加到B中。-->
+<body>
+<div>
+    <button id="bt01">按钮一增加一个通过append</button>
+    <button id="bt02">按钮一增加一个通过appendTo</button>
+</div>
+<div class="content"></div>
+<SCRIPT type="text/javascript">
+    $('#bt01').on('click', function () {
+        $('.content').append('<div class="append">通过append增加的一个div</div>');
+    })
+    $('#bt02').on('click', function () {
+        $('<div class="appendTo">通过appendTo增加的一个div</div>').appendTo($('.content'));
+
+    })
+</SCRIPT>
+</body>
+</html>

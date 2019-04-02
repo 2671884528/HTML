@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <STYLE>
+        div {
+            text-align: center;
+            margin: 20px auto;
+            border: 20px groove lightpink;
+        }
+        li {
+            list-style-type: none;
+
+        }
+
+    </STYLE>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+</head>
+<body>
+<div>
+    <div>
+        <ul>
+            <button>find(表达式)</button>
+            <button>find($对象)</button>
+        </ul>
+
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    <div>
+        <P>
+            <span>慕课</span>
+            <a href="https://www.imooc.com">慕课</a>
+
+        </P>
+        <span>
+            <span>必应</span>
+            <a href="https://www.cn.bing.com">必应</a>
+        </span>
+    </div>
+</div>
+<SCRIPT type="text/javascript">
+    // jQuery是一个合集对象，如果想快速查找DOM树中的这些元素的后代元素，
+    // 此时可以用find()方法，这也是开发使用频率很高的方法。这里要注意
+    // children与find方法的区别，
+    // children是父子关系查找，find是后代关系（包含父子关系）
+$('button:first').on('click',function () {
+    $('div div:even').find('li').css('border','3px groove cyan')
+})
+var $span = $('span');
+$('button:last').on('click',function () {
+    $('div div:last').find($span).css('border','3px groove cyan')
+})
+</SCRIPT>
+</body>
+</html>

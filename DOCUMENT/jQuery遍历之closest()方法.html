@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <STYLE>
+        div {
+            text-align: center;
+            margin: 20px auto;
+            border: 20px groove lightpink;
+        }
+        li {
+            list-style-type: none;
+
+        }
+
+    </STYLE>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+</head>
+<body>
+<div>
+    <div>
+        <ul>
+            <button>closest无参</button>
+            <button>closest有参</button>
+        </ul>
+
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+        </ul>
+    </div>
+    <div>
+        <P>
+            <span>慕课</span>
+            <a href="https://www.imooc.com">慕课</a>
+
+        </P>
+        <span>
+            <span>必应</span>
+            <a href="https://www.cn.bing.com">必应</a>
+        </span>
+    </div>
+</div>
+<SCRIPT type="text/javascript">
+    // $('li:first').closest('li')在li的上面找li元素并返回第一个包括自身
+    // $('li:first').parentjQuery遍历之parent()方法.html('li')不包括自身
+    $('button:first').on('click',function () {
+        $('li').closest('ul').css('border','3px groove cyan')
+    })
+    $('button:last').on('click',function () {
+        $('span:last').closest('span').css('border','3px groove cyan')
+    })
+</SCRIPT>
+</body>
+</html>

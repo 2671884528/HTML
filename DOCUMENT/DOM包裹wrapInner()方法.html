@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+    <style>
+        div{
+            border: 10px groove darkviolet;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+    </style>
+</head>
+<body>
+<h4>如果要将合集中的元素内部所有的子元素用其他元素包裹起来，并当作指定元素的子元素，
+    针对这样的处理，JQuery提供了一个wrapInner方法</h4>
+<h4>wrapInner( function ) ：允许我们用一个callback函数做参数，
+    每次遇到匹配元素 时，该函数被执行， 返回一个DOM元素，jQuery对象，
+    或者HTML片段，用来包住匹配元素的内容</h4>
+<div>
+    <button>加一个子P元素</button>
+    <button>加一个子A元素</button>
+</div>
+<div></div>
+<div></div>
+<SCRIPT type="text/javascript">
+    $('button:first').on('click',function () {
+        $('div:eq(1)').wrapInner("<p>用在线的jq文档调用wrap('div/div')会报一个错误/p>");
+    })
+    $('button:last').on('click',function () {
+        $('div:last').wrapInner(function () {
+            return '<a href="https://cn.bing.com" style="display: block;text-decoration: none">必应</a>'
+        })
+    })
+</SCRIPT>
+</body>
+</html>

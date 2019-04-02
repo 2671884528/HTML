@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+<style>
+    div {
+        margin:  0 auto 20px auto;
+        text-align: center;
+        border: 10px groove lightpink;
+    }
+
+</style>
+<body>
+<div>
+    <button id="bt01">在元素之前增加</button>
+    <button id="bt02">在元素之后增加</button>
+</div>
+<div class="000" title="大哥抽烟？">
+    <p id="before">测试before</p>
+</div>
+<div class="111" title="大哥抽烟？">
+    <P id="after">测试after</P>
+</div>
+<SCRIPT type="text/javascript">
+$('#bt01').on('click',function () {
+          // <p>支持多参数</p>
+    $('div:not(class) > p:first').before('<p style="background:darkmagenta">在之前插入</p>')
+})
+$('#bt02').on('click',function () {
+    $('#after').after('<p style="background:darkgreen">在之后插入</p>')
+})
+</SCRIPT>
+</body>
+</html>

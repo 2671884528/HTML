@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+    <style>
+        div {
+            margin: 20px auto;
+            background: darkviolet;
+            width: 100%;
+            border: 10px groove cyan;
+            text-align: center;
+        }
+
+        div a{
+            display: block;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<h2>.wrap()函数可以接受任何字符串或对象，可以传递给$()工厂函数来指定一个DOM结构。
+    这种结构可以嵌套了好几层深，但应该只包含一个核心的元素。每个匹配的元素都会
+    被这种结构包裹,该方法返回原始的元素集，以便之后使用链式方法。</h2>
+<div>
+    <button>给p加父标签</button>
+    <button>给a加父标签</button>
+</div>
+<div>
+    <p>第一个p元素</p>
+    <p>第二个p元素</p>
+</div>
+<div>
+    <a href="#">第一个a元素</a>
+    <a href="#">第二个a元素</a>
+</div>
+<SCRIPT type="text/javascript">
+    var count = 300;
+    $('button:first').on('click',function () {
+        $('p').wrap('<div></div>');
+        count = count-40;
+    })
+    $('button:eq(1)').on('click',function () {
+        $('a').wrap(function () {
+            return '<div></div>'
+        })
+        count = count-40;
+    })
+</SCRIPT>
+</body>
+</html>
