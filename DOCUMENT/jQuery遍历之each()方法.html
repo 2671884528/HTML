@@ -29,14 +29,14 @@
 
     </div>
     <div>
-        <ul>
+        <ul class="aa">
             <li>11111111</li>
             <li>22222222</li>
             <li>33333333</li>
         </ul>
     </div>
     <div>
-        <ul>
+        <ul class="aa">
             <li>11111111</li>
             <li>22222222</li>
             <li>33333333</li>
@@ -47,12 +47,17 @@
 <SCRIPT type="text/javascript">
 
     $('button:first').on('click', function () {
-      $("ul:not(:button) li").each(function (index,element) {
+      $("ul:has(li) li").each(function (index,element) {
           $(this).css('border','10px groove cyan')
       })
     })
     $('button:last').on('click', function () {
-        $('ul:last').children().css('border','3px groove red')
+        $("ul:has(li) li").each(function (index,element) {
+            if (index%2){
+
+                $(element).css('border','10px groove darkviolet')
+            }
+        })
     })
 </SCRIPT>
 </body>
