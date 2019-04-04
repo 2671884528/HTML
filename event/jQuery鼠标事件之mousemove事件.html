@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+    <STYLE>
+        div{
+            margin: 20px auto;
+            width: 300px;
+            text-align: center;
+            border: 20px groove cyan;
+        }
+        p{
+            margin: 0;
+        }
+    </STYLE>
+</head>
+<body>
+<div>
+    <p>在该p元素的范围内移动一下鼠标就会提示哪怕是1像素</p>
+</div>
+<div>
+    <button>指定触发mousemove</button>
+</div>
+<div class="mo">
+    <p>鼠标在某个位置停留会记录位置</p>
+    <p>位置：</p>
+</div>
+<div>
+    <p>不同函数传递数值</p>
+    <p>值：</p>
+</div>
+<SCRIPT type="text/javascript">
+    $('div p:first').mousemove(function (e) {
+        alert(e.target)
+    })
+    $("button").click(function () {
+        $('div p:first').mousemove();
+    })
+    $(".mo").mousemove(function (event) {
+        $('.mo p:last').html('位置:'+event.pageX)
+    })
+    $("div:last").mousemove(21212,function (e) {
+        $("div:last p:last").html('值：'+e.data);
+    })
+</SCRIPT>
+
+</body>
+</html>

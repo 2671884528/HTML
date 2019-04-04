@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <style>
+        div{
+            width: 237px;
+            margin: 20px auto;
+            border: 3px groove cyan ;
+            /*align-items: center;*/
+        }
+        input{
+            border: 0;
+            padding: 0;
+            height: 28px;
+            background: cyan;
+            color: darkred;
+        }
+    </style>
+ </head>
+<body>
+<div>
+    聚焦失焦：<input>
+</div>
+<div>
+    传递参数：<input>
+</div>
+<SCRIPT type="text/javascript">
+    $('input:first').focusin(function () {
+        $(this).css('background','darkviolet')
+    })
+    $('input:first').focusout(function () {
+        $(this).css('background','lightpink')
+    })
+    $('input:last').focusout('失焦过后你就是一个猪你是猪',function (e) {
+        $(this).val(e.data)
+    })
+    $('input:last').focusin('我是聚焦的',function (e) {
+        $(this).val(e.data)
+    })
+</SCRIPT>
+</body>
+</html>

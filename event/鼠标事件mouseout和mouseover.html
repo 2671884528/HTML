@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+    <style>
+        div {
+            border: 20px groove darkviolet;
+            text-align: center;
+            margin: 50px auto;
+        }
+        button {
+            margin-left: 50px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <button>第一个按钮</button>
+    <button>第二个按钮</button>
+</div>
+<div>
+    <button>第一个按钮</button>
+    <button>第二个按钮</button>
+</div>
+<SCRIPT type="text/javascript">
+    //绑定进入事件，进入该元素触发，进入子元素触发，从子元素再次父元素触发，下面的一样
+    // $('div:first').mouseover(function (e) {
+    //     alert(e.target)
+    // })
+    $("div:last").mouseout(function (e) {
+        alert(e.target)
+    })
+</SCRIPT>
+</body>
+</html>

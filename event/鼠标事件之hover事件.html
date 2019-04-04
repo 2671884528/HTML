@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover事件</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <style>
+        .father {
+            width: 600px;
+            height: 400px;
+            border: 10px groove darkviolet;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .son {
+            width: 400px;
+            height: 200px;
+            border: 10px groove cyan;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<SCRIPT type="text/javascript">
+    $("div div").hover(function () {
+        $(this).css('background','cyan')
+    },function () {
+        $(this).css('background','darkviolet')
+    })
+</SCRIPT>
+</body>
+</html>

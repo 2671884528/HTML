@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+    <STYLE>
+        div {
+            text-align: center;
+            border: 20px groove lightpink;
+            margin: 20px auto;
+
+        }
+
+        button {
+            background: cyan;
+        }
+    </STYLE>
+</head>
+<body>
+<div>
+    <button>$ele.click()</button>
+    <button>$ele.click( handler(eventObject) )</button>
+    <button>$ele.click( [eventData ], handler(eventObject) )</button>
+</div>
+<SCRIPT type="text/javascript">
+    $('button:first').mousedown(function () {
+        alert(this);
+    })
+    $('button:eq(1)').mousedown(function (e) {
+        alert(e.which);
+    })
+    function data(e){
+        alert(e.data);
+    }
+    $('button:last').mouseup(111,data)
+    )
+</SCRIPT>
+</body>
+</html>
