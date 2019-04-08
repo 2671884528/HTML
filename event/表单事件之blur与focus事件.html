@@ -6,7 +6,7 @@
     <script type="text/javascript" src="../jquery-3.3.1.js"></script>
     <style>
         div{
-            width: 237px;
+            width: 239px;
             margin: 20px auto;
             border: 3px groove cyan ;
             /*align-items: center;*/
@@ -34,6 +34,22 @@
     失焦有效：<input>
 </div>
 <SCRIPT type="text/javascript">
+    //子元素聚焦不能触发事件
+    $('div:eq(0)').focus(function () {
+        $(this).css('border','1px solid red')
+    })
+    //子元素聚焦能触发事件
+    $('div:eq(1)').focusin(function () {
+        $(this).css('border','1px solid red').find('input').val('你是一个大笨猪')
+    })
+     //子元素失焦不能触发事件
+    $('div:eq(2)').blur(function () {
+        $(this).css('border','1px solid red')
+    })
+    //子元素失焦能触发事件
+    $('div:eq(3)').focusout(function () {
+        $(this).css('border','1px solid red').find('input').val('你是一个大笨猪')
+    })
 
 </SCRIPT>
 </body>

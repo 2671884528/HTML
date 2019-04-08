@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <style>
+        div {
+            width: 300px;
+            margin: 20px auto;
+            border: 3px groove cyan;
+            background: cyan;
+        }
+
+        input {
+            border: 0;
+            padding: 0;
+            height: 28px;
+            width: 300px;
+            background: cyan;
+            color: darkred;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    keydown：<input>
+
+    keydown:<p></p>
+</div>
+<div>
+    keyup:<input>
+    keyup:<p></p>
+</div>
+
+<SCRIPT type="text/javascript">
+    //2、keypress事件与keydown和keyup的主要区别
+
+    // 1）对中文输入法支持不好，无法响应中文输入
+
+    // 2）无法响应系统功能键（如delete，backspace）
+
+    // 3）由于前面两个限制，keyCode与keydown和keyup不是很一直
+    $('input:first').keydown(function () {
+        $(this).next(':first').html($(this).val())
+
+    })
+    $('input:last').keypress(function () {
+        $(this).next(':first').text(this.value)
+    })
+</SCRIPT>
+</body>
+</html>

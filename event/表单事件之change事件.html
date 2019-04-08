@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT type="text/javascript" src="../jquery-3.3.1.js"></SCRIPT>
+    <style>
+        div {
+            margin: 20px auto;
+            border: 10px groove cyan;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <!--input元素-->
+    <!--监听value值的变化，当有改变时，失去焦点后触发change事件。对于单选按钮和复选框，当用户用鼠标做出选择时，该事件立即触发。-->
+
+    <!--select元素-->
+    <!--对于下拉选择框，当用户用鼠标作出选择时，该事件立即触发-->
+
+    <!--textarea元素-->
+    <!--多行文本输入框，当有改变时，失去焦点后触发change事件-->
+    <div>
+        输入:<input style="border: 0;padding: 0;height: 28px;width: ;: 1400px">
+    </div>
+    <div>
+        <SELECT>
+            <option>江西省</option>
+            <option>浙江省</option>
+        </SELECT>
+    </div>
+    <div>
+        多行输入:
+        <textarea style="width: 1400px">
+        </textarea>
+    </div>
+
+    <div>
+        输出结果:
+    </div>
+</div>
+<script type="text/javascript">
+    $("input").change(function () {
+        $('div:last').html(this.value)
+    })
+    $("select").change(function () {
+        $('div:last').html(this.value)
+    })
+    $("textarea").change(function () {
+        $('div:last').html(this.value)
+    })
+</script>
+</body>
+</html>

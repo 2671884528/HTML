@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <style>
+        div {
+            width: 300px;
+            margin: 20px auto;
+            border: 3px groove cyan;
+            background: cyan;
+        }
+
+        input {
+            border: 0;
+            padding: 0;
+            height: 28px;
+            width: 300px;
+            background: cyan;
+            color: darkred;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    keydown：<input>
+
+    keydown:<p></p>
+</div>
+<div>
+    keyup:<input>
+    keyup:<p></p>
+</div>
+
+<SCRIPT type="text/javascript">
+    // keydown、keypress事件触发在文字还没敲进文本框，
+    // 这时如果在keydown、keypress事件中输出文本框中
+    // 的文本，得到的是触发键盘事件前的文本，而keyup事
+    // 件触发时整个键盘事件的操作已经完成，获得的是触发
+    // 键盘事件后的文本
+
+
+    $('input:first').keydown(function () {
+        $(this).next(':first').html($(this).val())
+    })
+    $('input:last').keyup(function () {
+        $(this).next(':first').text(this.value)
+    })
+</SCRIPT>
+</body>
+</html>

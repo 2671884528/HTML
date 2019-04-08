@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <style>
+        div{
+            width:300px;
+            margin: 20px auto;
+            border: 3px groove cyan ;
+            text-align: center;
+            background: cyan;
+        }
+        input{
+            border: 0;
+            padding: 0;
+            height: 28px;
+            width: 300px;
+            background: cyan;
+            color: darkred;
+        }
+        textarea{
+            width: 300px;
+            padding: 0;
+            background: cyan;
+        }
+        button{
+            border: 0;
+            background: cyan;
+        }
+    </style>
+</head>
+<body>
+<div>
+    选中input中的文字：<input value="select元素只有对input和textarea有效"/>
+</div>
+<div>
+<button>按钮执行input提示</button>
+</div>
+<div>
+    选中text area中的文字：<textarea>余惠是一个大傻子，余惠是一个大笨猪。</textarea>
+</div>
+<SCRIPT type="text/javascript">
+    $('input').select(function (e) {
+        alert(e.target.value)
+    })
+    $('button').on('click',function () {
+        $("input").select()
+    })
+    $('textarea').select(function (e) {
+        alert(e.target.value)
+    })
+    $('div:eq(3)').focusout(function () {
+    })
+
+</SCRIPT>
+</body>
+</html>
