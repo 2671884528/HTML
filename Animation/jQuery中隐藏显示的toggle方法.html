@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--display属性将被储存并且需要的时候可以恢复。如果一个元素的display值为inline，
+然后是隐藏和显示，这个元素将再次显示inline-->
+<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+<style>
+    div{
+        margin: 40px auto;
+        text-align: center;
+    }
+    .one{
+        display: block;
+        border: 3px groove lightpink;
+    }
+    .two{
+        display: none;
+        border: 3px groove darkviolet;
+
+    }
+    button{
+        background: cyan;
+    }
+
+</style>
+<body>
+<div class="one">toggle()可以没有参数，最简单的操作</div>
+<div class="two">toggle({duration,complete})可以延时执行</div>
+<button class="show">隐藏</button>
+<button class="show">显示</button>
+<script type="text/javascript">
+ $('button:first').click(function () {
+     $('.one').toggle(3000)
+ })
+ $('button:last').click(function () {
+     $('.two').toggle(3000)
+ })
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <style>
+        div{
+            width: 350px;
+            margin: 20px auto;
+            border: 1px groove lightpink;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+页面中，通过input可以获取用户的输入值，例如常见的登录信息的提交处理。用户的输入不一定是标准的，输入一段密码：'  1123456  "，注意了： 密码的前后会留空，这可能是用户的无心的行为，但是密码确实又没错，针对这样的行为，开发者应该要判断输入值的前后是否有空白符、换行符、制表符这样明显的无意义的输入值。
+
+jQuery.trim()函数用于去除字符串两端的空白字符
+<div>
+前后留空白<input type="text" value=" 你是一个傻子吧！ ">
+<button>点击执行</button><br>
+前后无空白<input type="text" value=" 你是一个傻子吧！ ">
+<button>点击执行</button>
+</div>
+<script type="text/javascript">
+    $('button:first').on('click',function () {
+        alert($.trim($('input:first').val()).length
+        )
+    })
+    $('button:last').on('click', function () {
+        alert(($('input:last').val()).length
+        )
+    })
+</script>
+</body>
+</html>

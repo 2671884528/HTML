@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+</head>
+<body>
+<h1>index方法</h1>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<span>span1</span>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<span>span2</span><br>
+<select>
+    <option value="1">index()</option>
+    <option value="2">index(dom)</option>
+    <option value="3">index($)</option>
+</select>
+<button>执行</button>
+<script type="text/javascript">
+    $('button').click(
+        //如果不传递任何参数给 .index() 方法，则返回值就是
+        //jQuery对象中第一个元素相对于它同辈元素的位置
+
+        //如果在一组元素上调用 .index() ，并且参数是一个DOM元素或
+        //jQuery对象， .index() 返回值就是传入的元素相对于原先集合的位置
+
+        //如果参数是一个选择器,.index() 返回值就是原先元素相对于
+        //选择器匹配元素的位置。如果找不到匹配的元素，则 .index() 返回 -1
+        function () {
+            switch ($('select').val()) {
+                case "1":
+                    $('span:last').text($('li:eq(1)').index())
+                    break;
+                case "2":
+                    $('span:last').text($('li').index($('ul:first li:last')))
+                    break;
+                case "3":
+                    $('span:last').text($('li').index(document.getElementsByTagName("li")[5]))
+                    break;
+            }
+        }
+    )
+</script>
+</body>
+</html>

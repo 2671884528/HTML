@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--让页面上的元素不可见，一般可以通过设置css的display为none属性。
+但是通过css直接修改是静态的布局，如果在代码执行的时候，一般是通过js控制元素
+的style属性，这里jQuery提供了一个快捷的方法.hide()来达到这个效果-->
+<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+<style>
+    div{
+        margin: 40px auto;
+        border: 3px groove lightpink;
+        text-align: center;
+    }
+</style>
+<body>
+<div>hid直接操作</div>
+<button class="show">显示</button>
+<script type="text/javascript">
+    //一旦透明度 达到0，display样式属性将被设置为none，这个元素将不再在页面中影响布局
+
+    $("button").on('click', function () {
+        $(this).prev(':first').hide({duration:3000,complete:
+        alert('是否开始隐藏')}).show({duration:3000})
+    })
+</script>
+</body>
+</html>

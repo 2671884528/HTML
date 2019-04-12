@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div, .div2 {
+            border: 5px groove lightpink;
+            display: flex;
+            align-items: center;
+            width: 400px;
+            margin: 20px auto;
+            overflow: auto;
+        }
+
+        .div {
+            height: 400px;
+        }
+
+        .div2 button {
+            margin-left: 20px;
+            opacity: 0.5;
+            background: darkviolet;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+
+<body>
+<div class="div">
+</div>
+<div class="div2">
+
+    查看结果:<select>
+    <option value="1">遍历数组</option>
+    <option value="2">遍历对象</option>
+</select>
+    <button>执行</button>
+</div>
+
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+
+    var $div = $('.div');
+    $('button').click(function () {
+        if ($('select').val() == "1"){
+            jQuery.each(['郭永钢','余惠'],function (i,item) {
+                $div.append("索引:"+i+"<br>"+"值:"+item+"<br>")
+            });
+        }
+        else{
+            jQuery.each({name:"蒙奇·D·钢",age:"18"},function (property,value) {
+                // $div.empty();
+                $div.append(property+":"+value+"<br>");
+            })
+        }
+
+    })
+</script>
+
+</body>
+</html>

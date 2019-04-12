@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--display属性值保存在jQuery的数据缓存中，所以display可以方便以后
+可以恢复到其初始值-->
+<!--当一个隐藏动画后，高度值达到0的时候，display 样式属性被设置为none，
+以确保该元素不再影响页面布局-->
+<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+<style>
+    div{
+        margin: 40px auto;
+        text-align: center;
+    }
+    .one{
+        border: 3px groove lightpink;
+        display: none;
+    }
+    .two{
+        border: 3px groove darkviolet;
+    }
+</style>
+<body>
+<h1>测试一</h1>
+<div class="one">slide动画隐藏</div>
+<button>显示</button>
+<h1>测试二</h1>
+<div class="two">slideDown隐藏</div>
+<button>隐藏</button>
+<script type="text/javascript">
+    //一旦透明度 达到0，display样式属性将被设置为none，这个元素将不再在页面中影响布局
+    $("button:first").on('click',function () {
+        $('.one').slideToggle(3000,function () {
+            alert("显示成功")
+        })
+    })
+    $('button:last').click(function () {
+        $('.two').slideToggle(3000,function () {
+                alert("隐藏成功")
+            }
+        )
+    });
+
+
+</script>
+</body>
+</html>

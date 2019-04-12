@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div, .div2 {
+            border: 5px groove lightpink;
+            display: flex;
+            align-items: center;
+            width: 400px;
+            margin: 20px auto;
+            overflow: auto;
+        }
+
+        .div {
+            height: 400px;
+        }
+
+        .div2 button {
+            margin-left: 20px;
+            opacity: 0.5;
+            background: darkviolet;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+<!--jQuery.inArray()函数用于在数组中搜索指定的值，并返回其索引值。如果数组中不存在该值，则返回 -1。-->
+<body>
+<div class="div">
+</div>
+<div class="div2">
+
+    查看结果:<select>
+    <option value="1">inArray( value, array ,[ fromIndex ] )</option>
+    <option value="2">inArray( value, array )</option>
+</select>
+    <button>执行</button>
+</div>
+
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+
+    var $div = $('.div');
+    $('button').click(function () {
+        $div.empty();
+        if($('select').val() == "1"){
+            var index = $.inArray('郭永钢',['余惠','傻子','郭永钢','小宝'],0);
+            $div.append("查的的索引:"+index);
+
+        }else{
+            var index = $.inArray('余惠',['猪八戒','唐僧','孙悟空','余惠']);
+            $div.append("查到的索引:"+index);
+        }
+
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div, .div2 {
+            border: 5px groove lightpink;
+            display: flex;
+            align-items: center;
+            width: 400px;
+            margin: 20px auto;
+            overflow: auto;
+        }
+
+        .div {
+            height: 400px;
+        }
+
+        .div2 button {
+            margin-left: 20px;
+            opacity: 0.5;
+            background: darkviolet;
+        }
+    </style>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+</head>
+<!--参数：-->
+<!--visible : 　不剪切内容也不添加滚动条。假如显式声明此默认值，对象将被剪切为包含对象的window或frame的大小。并且clip属性设置将失效-->
+<!--auto : 　此为body对象和textarea的默认值。在需要时剪切内容并添加滚动条-->
+<!--hidden : 　不显示超过对象尺寸的内容-->
+<!--scroll : 　总是显示滚动条-->
+<!--overflow:auto; 这个表示当你内容超过div高度出现滚动条-->
+
+<!--<div  style='overflow:auto;height: 320px;'></div> -->
+
+<!--div的高度必须设置为固定值，将overflow属性的值设置为auto-->
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+<body>
+<div class="div">
+</div>
+<div class="div2">
+
+    选择动画:<select>
+    <option value="1">动画一</option>
+    <option value="2">动画二</option>
+</select>
+    <button>执行动画</button>
+</div>
+
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+    var str =".animate( properties, options )"+
+    "options参数"+
+    "duration - 设置动画执行的时间"+
+    "easing - 规定要使用的 easing 函数，过渡使用哪种缓动函数"+
+    "step：规定每个动画的每一步完成之后要执行的函数"+
+    "progress：每一次动画调用的时候会执行这个回调，就是一个进度的概念"+
+    "complete：动画完成回调"
+
+    var $div = $('.div');
+    $div.text(str);
+    $('button').click(function () {
+        var select = $('select').val();
+        switch (select) {
+            case "1":
+                $div.animate({height: 300}, {
+                    duration: 3000, step: function (now, fx) {
+                        $div.text(str+"高度改变值:"+now);
+                    }
+                });
+                break;
+
+            case "2":
+                $div.animate({height: 300}, {
+                    duration: 3000, progress: function (now, fx) {
+                        $div.text(str+"进度:"+arguments[1]);
+                    }
+                });
+                break;
+
+        }
+    })
+
+</script>
+
+</body>
+</html>

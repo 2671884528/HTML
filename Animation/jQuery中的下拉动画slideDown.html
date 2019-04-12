@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--.slideDown()方法将给匹配元素的高度的动画，这会导致页面的下面部分滑下去，弥补了显示的方式-->
+<!---->
+<!--常见的操作，提供一个动画是时间，然后传递一个回调，用于知道动画是什么时候结束-->
+<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+<style>
+    div{
+        margin: 40px auto;
+        text-align: center;
+        display: none;
+    }
+    .one{
+        border: 3px groove lightpink;
+    }
+    .two{
+        border: 3px groove darkviolet;
+    }
+</style>
+<body>
+<h1>测试一</h1>
+<div class="one">slide动画下拉显示</div>
+<button>显示</button>
+<h1>测试二</h1>
+<div class="two">slideDown下拉显示</div>
+<button>显示</button>
+<script type="text/javascript">
+    //一旦透明度 达到0，display样式属性将被设置为none，这个元素将不再在页面中影响布局
+    $("button:first").on('click',function () {
+        $('.one').slideDown(3000)
+    })
+    $('button:last').click(function () {
+        $('.two').slideDown(3000,function () {
+            alert("显示完成")
+        }
+    )
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <style>
+        div{
+            margin: 20px auto;
+            border: 3px groove lightpink;
+        }
+
+    </style>
+</head>
+<!--toggle以左上点为定点，width和height都会一起变化-->
+<!--fadeToggle会直接跳出一个div的框子只是此时的opacity的程度=0，开始变大-->
+<!--slideToggle会直接出现width随后随着你的duration的时间慢慢变化-->
+<body>
+<div>
+    toggle：动态效果为从右至左。横向动作，toggle通过display来判断切换所有匹配元素的可见性<br>
+    slideToggle：动态效果从下至上。竖向动作，slideToggle 通过高度变化来切换所有匹配元素的可见性
+</div>
+toggle的区别:
+<select>
+    <option value="1">toggle</option>
+    <option value="2">fadeToggle</option>
+    <option value="3">slideToggle</option>
+</select>
+<button>点击切换</button>
+<script type="text/javascript">
+    var $div = $('div');
+    $('button').click(function () {
+        var  select = $('select').val();
+        switch (select) {
+            case "1":
+                $div.toggle(3000);
+                break;
+            case "2":
+                $div.fadeToggle(3000);
+                break;
+            case "3":
+                $div.slideToggle(3000);
+                break;
+        }
+    })
+</script>
+</body>
+</html>

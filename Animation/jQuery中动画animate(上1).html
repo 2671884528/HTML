@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            border: 5px groove lightpink;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            margin: 20px auto;
+        }
+
+
+    </style>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+</head>
+<body style="text-align: center">
+<div class="div">
+    properties：一个或多个css属性的键值对所构成的Object对象。要特别注意所有用于动画的属性必须是数字的，除非另有说明；这些属性如果不是数字的将不能使用基本的jQuery功能。比如常见的，border、margin、padding、width、height、font、left、top、right、bottom、wordSpacing等等这些都是能产生动画效果的。background-color很明显不可以，因为参数是red或者GBG这样的值，非常用插件，否则正常情况下是不能只用动画效果的。注意，CSS
+    样式使用 DOM 名称（比如 "fontSize"）来设置，而非 CSS 名称（比如 "font-size"）。
+</div>
+
+选择动画:<select>
+    <option value="1">动画一</option>
+    <option value="2">动画二</option>
+    <option value="3">动画三</option>
+    <option value="4">动画四</option>
+</select>
+<button>确定动画</button>
+<button>还原</button>
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+    var $div = $('div');
+    var size = $div.css("fontSize");
+    var width = $div.css("width");
+    var height = $div.css("height");
+    $('button:first').click(function () {
+        var select = $('select').val();
+        switch (select) {
+            case "1":
+                $div.animate({width: 500, height: 400});
+                break;
+
+            case "2":
+                $div.animate({
+                    width: "+=100px", height: "+=100px"
+                });
+                break;
+
+            case "3":
+                $div.animate({
+                    fontSize: "10px"
+                }, 1000, function (e) {
+
+                });
+                break;
+
+            case "4":
+                $div.animate(
+                    {
+                        width: "toggle"
+                    }
+                );
+                break;
+
+        }
+    })
+</script>
+<script type="text/javascript">
+    $('button:last').on('click', function () {
+        $div.css({"fontSize":size,"width":width,"height":height});
+    })
+</script>
+</body>
+</html>
